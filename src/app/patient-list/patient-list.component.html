@@ -6,4 +6,7 @@
   </li>
 </ul>
 
-<app-patient-detail [patient]="selectedPatient"></app-patient-detail>
+<div *ngIf="selectedPatient">
+  <h2>{{selectedPatient.name | uppercase}} is selected</h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

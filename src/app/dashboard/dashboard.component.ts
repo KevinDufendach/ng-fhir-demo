@@ -13,7 +13,8 @@ export class DashboardComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   ngOnInit() {
-    this.patientService.getPatients().then(patients => this.patients = patients.slice(1, 4));
+    this.patientService.getPatients()
+      .then(patients => this.patients = patients.slice(1, 5));
   }
 
 }
