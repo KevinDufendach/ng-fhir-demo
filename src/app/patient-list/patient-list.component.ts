@@ -31,4 +31,25 @@ export class PatientListComponent implements OnInit {
     this.router.navigate(['/detail', this.selectedPatient.id]);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.patientService.create(name)
+      .then(patient => {
+        this.patients.push(patient);
+        this.selectedPatient = null;
+      });
+  }
+
+  delete(patient: Patient): void {
+    this.patientService
+      .delete(patient.id)
+      .then(() => {
+        this.patients = this.patients.filter(pt => pt !== patient);
+        if (this.selectedPatient === patient) {
+          this.selectedPatient = null;
+        }
+      });
+  }
+
 }
