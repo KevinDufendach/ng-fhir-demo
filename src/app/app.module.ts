@@ -9,6 +9,15 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './route/app-routing.module';
 
+// // Imports for loading & configuring the in-memory web api
+// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
+
+import { InMemoryWebApiModule} from 'angular-in-memory-web-api';
+import {HttpModule} from '@angular/http';
+import {InMemoryDataService} from './in-memory-data.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +28,9 @@ import { AppRoutingModule } from './route/app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
 ],
   providers: [ PatientService ],
   bootstrap: [ AppComponent ]
