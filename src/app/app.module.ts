@@ -16,6 +16,7 @@ import { AppRoutingModule } from './route/app-routing.module';
 import { InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {HttpModule} from '@angular/http';
 import {InMemoryDataService} from './in-memory-data.service';
+import { PatientSearchComponent } from './patient-search/patient-search.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {InMemoryDataService} from './in-memory-data.service';
     AppComponent,
     PatientDetailComponent,
     PatientListComponent,
-    DashboardComponent
+    DashboardComponent,
+    PatientSearchComponent
   ],
   imports: [
     BrowserModule,
