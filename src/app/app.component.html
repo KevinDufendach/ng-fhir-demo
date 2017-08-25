@@ -1,16 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <h2>
+  <h1>
     Welcome to {{title}}!
-  </h2>
+  </h1>
+  <app-patient-list></app-patient-list>
 
-  <ul class="patients">
-    <li *ngFor="let patient of patients"
-        (click)="onSelect(patient)"
-        [class.selected]="patient === selectedPatient">
-      <span class="badge">{{patient.id}}</span> {{patient.name}}
-    </li>
-  </ul>
 
-  <app-patient-detail [patient]="selectedPatient"></app-patient-detail>
 </div>
